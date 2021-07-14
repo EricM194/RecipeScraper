@@ -1,0 +1,4 @@
+mariadb
+flask
+bs4
+requests
