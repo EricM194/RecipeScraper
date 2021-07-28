@@ -1,4 +1,4 @@
-CREATE PROCEDURE `sp_get_all_recipes` () BEGIN
+CREATE PROCEDURE `sp_get_all_recipes` () 
 SELECT
   `recipe`.`recipe_id` AS 'ID',
   `recipe`.`name` AS 'Name',
@@ -18,4 +18,3 @@ SELECT
   `recipe`.`last_modified_by` AS 'Last Modified By'
 FROM
   `recipes`.`recipe`;
-END

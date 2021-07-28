@@ -11,7 +11,7 @@ CREATE PROCEDURE `sp_upsert_recipe` (
   sp_cook_time int,
   sp_servings int,
   sp_yield NVARCHAR(255)
-) BEGIN
+)
 INSERT INTO
   `recipes`.`recipe` (
     `recipe_id`,
@@ -64,4 +64,3 @@ UPDATE
   yield = sp_yield,
   last_modified_date = CURRENT_TIMESTAMP(),
   last_modified_by = CURRENT_USER();
-END

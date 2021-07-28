@@ -11,7 +11,7 @@ CREATE PROCEDURE `sp_insert_recipe` (
   cook_time int,
   servings int,
   yield NVARCHAR(255)
-) BEGIN
+)
 INSERT INTO
   `recipes`.`recipe` (
     `recipe_id`,
@@ -50,4 +50,3 @@ VALUES
     CURRENT_TIMESTAMP(),
     CURRENT_USER()
   );
-END

@@ -3,7 +3,7 @@ CREATE PROCEDURE `sp_insert_ingredient` (
   amount float,
   measure NVARCHAR(255),
   ingredient NVARCHAR(255)
-) BEGIN
+)
 INSERT INTO
   `recipes`.`ingredient` (
     `recipe_id`,
@@ -13,4 +13,3 @@ INSERT INTO
   )
 VALUES
   (recipe_id, amount, measure, ingredient);
-END

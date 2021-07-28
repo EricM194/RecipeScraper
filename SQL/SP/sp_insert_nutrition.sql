@@ -3,7 +3,7 @@ CREATE PROCEDURE `sp_insert_nutrition` (
   amount float,
   name NVARCHAR(255),
   daily_value int
-) BEGIN
+)
 INSERT INTO
   `recipes`.`nutrition` (
     `recipe_id`,
@@ -13,4 +13,3 @@ INSERT INTO
   )
 VALUES
   (recipe_id, amount, name, daily_value);
-END

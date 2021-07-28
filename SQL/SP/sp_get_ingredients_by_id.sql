@@ -1,4 +1,4 @@
-CREATE PROCEDURE `sp_get_ingredients_by_id` (id int) BEGIN
+CREATE PROCEDURE `sp_get_ingredients_by_id` (id int)
 SELECT
   `ingredient`.`recipe_id` AS 'ID',
   `ingredient`.`amount` AS 'Amount',
@@ -8,4 +8,3 @@ FROM
   `recipes`.`ingredient`
 WHERE
   recipe_id = id;
-END

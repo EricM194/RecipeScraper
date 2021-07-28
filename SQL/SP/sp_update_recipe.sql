@@ -12,7 +12,6 @@ CREATE PROCEDURE `sp_update_recipe`(
   sp_servings int,
   sp_yield NVARCHAR(255)
 )
-BEGIN
 UPDATE
   recipes.recipe
 SET
@@ -31,4 +30,3 @@ SET
   last_modified_by = CURRENT_USER()
 WHERE
   recipe_id = sp_recipe_id;
-END

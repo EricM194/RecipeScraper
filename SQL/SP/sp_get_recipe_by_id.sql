@@ -1,4 +1,4 @@
-CREATE PROCEDURE `sp_get_recipe_by_id`(id int) BEGIN
+CREATE PROCEDURE `sp_get_recipe_by_id`(id int)
 SELECT
   `recipe`.`recipe_id` AS 'ID',
   `recipe`.`name` AS 'Name',
@@ -20,4 +20,3 @@ FROM
   `recipes`.`recipe`
 where
   recipe_id = id;
-END
