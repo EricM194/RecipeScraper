@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import json
-
 import recipe_db_connector
 
 

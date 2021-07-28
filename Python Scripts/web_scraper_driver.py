@@ -5,7 +5,7 @@ from time import sleep
 
 import logger
 import recipe_db_connector
-from all_recipes_scraper import scrape_recipes
+from all_recipes_scraper import scrape_recipes, scrape_recipes2
 
 base_url = 'https://www.allrecipes.com/recipe/'
 max_id = 0
@@ -18,19 +18,25 @@ with open('data.json', 'r') as json_file:
 		if max_id < i['id']:
 			max_id = i['id']
 
-url_number = max_id + 1
+#url_number = max_id + 1
+url_number = 123432
 
 for i in range(1):
 
 	scraped_recipe = scrape_recipes(base_url + str(url_number))
 
-	if scraped_recipe == 404:
-		result = {"id": url_number, "result": '404'}
-		logger.print_info('recipe id:' +  str(url_number) + '404')
-
-	elif scraped_recipe == 'some other issue':
+	if scraped_recipe == ' some other issue':
+		scraped_recipe = scrape_recipes2(base_url + str(url_number))
+	
+	if scraped_recipe == 'some other issue':
 		result = {"id": url_number, "result": 'some other issue'}
-		logger.print_info('recipe id:' + str(url_number) + 'some other issue')
+		logger.print_info('recipe id:' + str(url_number) + ' some other issue')
+
+	elif scraped_recipe == 404:
+		result = {"id": url_number, "result": '404'}
+		logger.print_info('recipe id:' +  str(url_number) + ' 404')
+
+
 
 	else:
 		if recipe_db_connector.insert_recipe(scraped_recipe).rowcount != 2: #insert returns 1, update returns 2

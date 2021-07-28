@@ -60,7 +60,15 @@ def sql_textify(text, comma=True):
 
 
 def run_sql(statement):
+	"""Runs a MYSQL insert/update/delete statement\n
+	Logs the statement run and the run time
 
+	Args:
+		statement (str): the SQL script  to run
+
+	Returns:
+		mariadb.connect.cursor: the cursor object with your results
+	"""	
 	logger.log_sql_statement(statement)
 	start_time = time.time()
 	try:
@@ -84,7 +92,6 @@ def run_sql_select(statement):
 	Returns:
 		mariadb.connect.cursor: the cursor object with your results
 	"""	
-
 	logger.log_sql_statement(statement)
 	start_time = time.time()
 	try:
